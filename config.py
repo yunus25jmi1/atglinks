@@ -20,7 +20,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "5732195902:AAHFTEHpnBscXnyDDsBb-HCTpXuN
 ADMINS = os.environ.get("ADMINS")
 
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
-DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://technicalatg20:2KytY8FGELVEjjgI@cluster0.rws06mw.mongodb.net/?retryWrites=true&w=majority", None) # mongodb uri from https://www.mongodb.com/
+DATABASE_URL = os.environ.get("DATABASE_URL", None) # mongodb uri from https://www.mongodb.com/
 OWNER_ID =  int(os.environ.get("OWNER_ID", "662229319")) # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
