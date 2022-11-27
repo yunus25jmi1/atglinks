@@ -81,6 +81,10 @@ class Bot(Client):
         self.username = f'@{me.username}'
         temp.BOT_USERNAME = me.username
         temp.FIRST_NAME = me.first_name
+        app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        await web.TCPSite(app, bind_address, PORT).start()
         if not await db.get_bot_stats():
             await db.create_stats()
         banned_users = await filter_users({"banned": True})
