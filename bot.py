@@ -99,3 +99,5 @@ class Bot(Client):
         await super().stop()
         logging.info('Bot Stopped Bye')
 
+app = Bot()
+app.run()
