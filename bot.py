@@ -8,7 +8,7 @@ from plugins import web_server
 from pyrogram import Client
 from pyrogram.errors.exceptions.not_acceptable_406 import ChannelPrivate
 
-from config import *
+from config import PORT, API_ID, API_HASH, BOT_TOKEN, ADMINS, LOG_STR
 from database import db
 from database.users import filter_users
 from helpers import ping_server, temp
