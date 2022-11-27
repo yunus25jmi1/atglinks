@@ -2,6 +2,7 @@ import os
 from os import environ
 from dotenv import load_dotenv
 load_dotenv()
+id_pattern = re.compile(r'^.\d+$')
 
 def is_enabled(value, default):
     if value.lower() in ["true", "yes", "1", "enable", "y"]:
@@ -13,14 +14,14 @@ def is_enabled(value, default):
 
 # Mandatory variables for the bot to start
 PORT = environ.get("PORT", "8080")
-API_ID = int(os.environ.get("1590731")) #API ID from https://my.telegram.org/auth
-API_HASH = os.environ.get("91e038f0e270398c81568f98e7bf045c") #API Hash from https://my.telegram.org/auth
-BOT_TOKEN = os.environ.get("1368049728:AAG8k0B-9jXhf788Dp4TVyA5zDP4zSwrmMQ") # Bot token from @BotFather
-ADMINS = [int(i.strip()) for i in os.environ.get("662229319").split(",")] if os.environ.get("662229319") else []
+API_ID = int(os.environ.get("API_ID", 8143783)) #API ID from https://my.telegram.org/auth
+API_HASH = os.environ.get("API_HASH", "889c67efa7cf3979acc079c3271f4254") #API Hash from https://my.telegram.org/auth
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "5732195902:AAHFTEHpnBscXnyDDsBb-HCTpXuNYLngpSI") # Bot token from @BotFather
+ADMINS = [int(i.strip()) for i in os.environ.get("662229319").split(",")] if os.environ.get("ADMINS", "662229319") else []
 
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
-DATABASE_URL = os.environ.get("mongodb+srv://technicalatg20:2KytY8FGELVEjjgI@cluster0.rws06mw.mongodb.net/?retryWrites=true&w=majority", None) # mongodb uri from https://www.mongodb.com/
-OWNER_ID =  int(os.environ.get("662229319")) # id of the owner
+DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://technicalatg20:2KytY8FGELVEjjgI@cluster0.rws06mw.mongodb.net/?retryWrites=true&w=majority", None) # mongodb uri from https://www.mongodb.com/
+OWNER_ID =  int(os.environ.get("OWNER_ID", "662229319")) # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
 #  Optionnal variables
